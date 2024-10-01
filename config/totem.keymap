@@ -107,42 +107,42 @@
 
         combo_shift1 {
             timeout-ms = <50>;
-            key-positions = <13 14>;
+            key-positions = <12 13>;
             layers = <0>;
             bindings = <&kp LSHFT>;
         };
 
         combo_shift2 {
             timeout-ms = <50>;
-            key-positions = <15 16>;
-            layers = <0 1 2>;
+            key-positions = <16 17>;
+            layers = <0>;
             bindings = <&kp RSHFT>;
         };
 
         combo_ctrl1 {
             timeout-ms = <50>;
-            key-positions = <12 14>;
+            key-positions = <11 13>;
             layers = <0>;
             bindings = <&kp LCTRL>;
         };
 
         combo_ctrl2 {
             timeout-ms = <50>;
-            key-positions = <15 17>;
+            key-positions = <16 18>;
             layers = <0>;
             bindings = <&kp RCTRL>;
         };
 
         combo_alt1 {
             timeout-ms = <50>;
-            key-positions = <11 14>;
+            key-positions = <13 10>;
             layers = <0>;
             bindings = <&kp LALT>;
         };
 
         combo_alt2 {
             timeout-ms = <50>;
-            key-positions = <15 18>;
+            key-positions = <16 19>;
             layers = <0>;
             bindings = <&kp RALT>;
         };
@@ -165,6 +165,14 @@
             bindings = <&to 4>;
             key-positions = <4 5>;
             layers = <0 1 2 3>;
+            timeout-ms = <50>;
+        };
+
+        region_screen {
+            bindings = <&capture_region>;
+            key-positions = <20 25>;
+            layers = <0 1 2 3>;
+            timeout-ms = <50>;
         };
 
         /* 			combo_copy {
@@ -242,6 +250,20 @@
                 <&macro_tap>,
                 <&kp G &kp I &kp F>;
         };
+
+        capture_region: capture_region {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp PRINTSCREEN>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "CAPTURE_REGION";
+        };
     };
 
     keymap {
@@ -294,8 +316,8 @@
             bindings = <
            &kp KP_MINUS  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_DIVIDE      &kp KP_DIVIDE    &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS
            &kp KP_PLUS   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MULTIPLY    &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS
-&kp PSCRN  &kp KP_DOT    &kp KP_N1  &kp KP_N2  &kp KP_N3  &none              &none            &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT    &trans
-                                    &trans     &kp RET    &kp SPACE          &kp SPACE        &kp RET    &kp KP_N0
+&kp PSCRN  &kp KP_DOT    &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp RET            &kp RET          &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT    &trans
+                                    &kp KP_N0  &trans     &kp SPACE          &kp SPACE        &trans     &kp KP_N0
             >;
         };
 
@@ -364,7 +386,7 @@
             //             ├─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┤
             //             │  SHIFT  │    A    │    W    │    D    │    F    │                    │         │         │         │         │         │
             //   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-            //   │ ------- │  CRTL   │ ------- │    S    │    C    │ ------- │                    │         │         │         │         │         │  TO_0   │
+            //   │ ------- │  CRTL   │ ------- │    S    │    C    │ ------- │                    │         │         │         │         │         │         │
             //   └─────────┴─────────┴─────────┴─────────┼─────────┼─────────┼─────────┬┬─────────┼─────────┼─────────┼─────────┴─────────┴─────────┴─────────┘
             //                                           │   ALT   │  SPACE  │  SPACE  ││         │         │         │  
             //                                           └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘

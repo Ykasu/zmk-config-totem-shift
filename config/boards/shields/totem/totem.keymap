@@ -115,7 +115,7 @@
         combo_shift2 {
             timeout-ms = <50>;
             key-positions = <16 17>;
-            layers = <0 1 2>;
+            layers = <0>;
             bindings = <&kp RSHFT>;
         };
 
@@ -165,12 +165,14 @@
             bindings = <&to 4>;
             key-positions = <4 5>;
             layers = <0 1 2 3>;
+            timeout-ms = <50>;
         };
 
         region_screen {
             bindings = <&capture_region>;
             key-positions = <20 25>;
             layers = <0 1 2 3>;
+            timeout-ms = <50>;
         };
 
         /* 			combo_copy {

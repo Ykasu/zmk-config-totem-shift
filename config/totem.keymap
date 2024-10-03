@@ -102,7 +102,7 @@
             timeout-ms = <50>;
             key-positions = <34 35>;
             layers = <0 1 2 3>;
-            bindings = <&undo_macro>;
+            bindings = <&kp LC(Z)>;
         };
 
         combo_shift1 {
@@ -155,7 +155,7 @@
         };
 
         combo_backspace1 {
-            key-positions = <8 9>;
+            key-positions = <5 6>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
             bindings = <&kp BACKSPACE>;
@@ -209,69 +209,6 @@
     };
 
     macros {
-        ditto_kb: ditto_kb {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp GRAVE>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
-
-        copy_macro: copy_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp C>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
-
-        paste_macro: paste_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp V>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
-
-        undo_macro: undo_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp Z>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
-
-        gif: gif {
-            label = "giphy";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N2>,
-                <&macro_release>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp G &kp I &kp F>;
-        };
-
         capture_region: capture_region {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -286,76 +223,16 @@
             label = "CAPTURE_REGION";
         };
 
-        win_left: win_left {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&win_left>,
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp LEFT_ARROW>,
-                <&macro_release>;
-
-            label = "WIN_LEFT";
-        };
-
-        win_right: win_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&win_left>,
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp RIGHT_ARROW>,
-                <&macro_release>;
-
-            label = "WIN_RIGHT";
-        };
-
-        win_up: win_up {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&win_left>,
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp UP_ARROW>,
-                <&macro_release>;
-
-            label = "WIN_UP";
-        };
-
-        win_down: win_down {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&win_left>,
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp DOWN_ARROW>,
-                <&macro_release>;
-
-            label = "WIN_DOWN";
-        };
-
         region_capture2: region_capture2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp K_APP>,
+                <&kp RCTRL>,
                 <&macro_tap>,
-                <&kp PRINTSCREEN>,
+                <&kp K_APP>,
                 <&macro_release>,
-                <&kp K_APP>;
+                <&kp RCTRL>;
 
             label = "REGION_CAPTURE2";
         };
@@ -435,10 +312,10 @@
             //                                           └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘
 
             bindings = <
-        &kp EXCL  &kp AT     &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS      &kp ASTRK   &kp MINUS     &kp EQUAL
-        &kp LPAR  &kp LEFT   &kp UP    &kp RIGHT  &kp RPAR     &kp PG_UP  &kp C_PREV    &kp C_PP    &kp C_NEXT    &kp HOME
-&trans  &kp LBKT  &kp GRAVE  &kp DOWN  &kp UNDER  &kp RBKT     &kp PG_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp END    &to 0
-                             &kp LALT  &kp LCTRL  &kp LSHFT    &trans     &trans        &trans
+                 &kp EXCL  &kp AT     &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS      &kp ASTRK   &kp MINUS     &kp EQUAL
+                 &kp LPAR  &kp LEFT   &kp UP    &kp RIGHT  &kp RPAR     &kp PG_UP  &kp C_PREV    &kp C_PP    &kp C_NEXT    &kp HOME
+&kp PRINTSCREEN  &kp LBKT  &kp GRAVE  &kp DOWN  &kp UNDER  &kp RBKT     &kp PG_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp END    &to 0
+                                      &kp LALT  &kp LCTRL  &kp LSHFT    &trans     &trans        &trans
             >;
         };
 

@@ -150,11 +150,11 @@
         combo_super {
             timeout-ms = <50>;
             key-positions = <32 37>;
-            layers = <0>;
+            layers = <0 2 3 1>;
             bindings = <&kp LGUI>;
         };
 
-        combo_backspace {
+        combo_backspace1 {
             key-positions = <8 9>;
             timeout-ms = <50>;
             layers = <0 1 2 3>;
@@ -173,6 +173,27 @@
             key-positions = <20 25>;
             layers = <0 1 2 3>;
             timeout-ms = <50>;
+        };
+
+        combo_backspace2 {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <3 4>;
+            timeout-ms = <50>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_del1 {
+            bindings = <&kp DEL>;
+            key-positions = <24 25>;
+            timeout-ms = <50>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_del2 {
+            bindings = <&kp DEL>;
+            key-positions = <26 27>;
+            timeout-ms = <50>;
+            layers = <0 1 2 3>;
         };
 
         /* 			combo_copy {
@@ -264,6 +285,80 @@
 
             label = "CAPTURE_REGION";
         };
+
+        win_left: win_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&win_left>,
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp LEFT_ARROW>,
+                <&macro_release>;
+
+            label = "WIN_LEFT";
+        };
+
+        win_right: win_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&win_left>,
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp RIGHT_ARROW>,
+                <&macro_release>;
+
+            label = "WIN_RIGHT";
+        };
+
+        win_up: win_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&win_left>,
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp UP_ARROW>,
+                <&macro_release>;
+
+            label = "WIN_UP";
+        };
+
+        win_down: win_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&win_left>,
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp DOWN_ARROW>,
+                <&macro_release>;
+
+            label = "WIN_DOWN";
+        };
+
+        region_capture2: region_capture2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp K_APP>,
+                <&macro_tap>,
+                <&kp PRINTSCREEN>,
+                <&macro_release>,
+                <&kp K_APP>;
+
+            label = "REGION_CAPTURE2";
+        };
     };
 
     keymap {
@@ -288,10 +383,10 @@
             //                                           └─────────┴─────────┴──────────┘└─────────┴─────────┴─────────┘
 
             bindings = <
-           &kp Q  &kp W  &kp F        &kp P         &kp B          &kp J      &kp L     &kp U      &kp Y    &kp SEMI
-           &kp A  &kp R  &kp S        &kp T         &kp G          &kp M      &kp N     &kp E      &kp I    &kp O
-&lt 3 TAB  &kp Z  &kp X  &kp C        &kp D         &kp V          &kp K      &kp H     &kp COMMA  &kp DOT  &kp FSLH  &lc 2 SQT
-                         &copy_macro  &paste_macro  &lt 1 SPACE    &lt 2 RET  &kp BSPC  &ditto_kb
+           &kp Q  &kp W  &kp F      &kp P        &kp B          &kp J      &kp L     &kp U          &kp Y    &kp SEMI
+           &kp A  &kp R  &kp S      &kp T        &kp G          &kp M      &kp N     &kp E          &kp I    &kp O
+&lt 3 TAB  &kp Z  &kp X  &kp C      &kp D        &kp V          &kp K      &kp H     &kp COMMA      &kp DOT  &kp FSLH  &lc 2 SQT
+                         &kp LC(C)  &lt 2 LC(V)  &lt 1 SPACE    &lt 2 RET  &kp BSPC  &kp LC(GRAVE)
             >;
         };
 
@@ -366,10 +461,10 @@
             //                                           └─────────┴─────────┴──────────┘└─────────┴─────────┴─────────┘
 
             bindings = <
-        &sys_reset   &bt BT_CLR  &out OUT_TOG  &trans  &bt BT_SEL 0    &kp INSERT       &kp F7  &kp F8  &kp F9  &kp F12
-        &bootloader  &bt BT_NXT  &trans        &trans  &bt BT_SEL 1    &kp SLCK         &kp F4  &kp F5  &kp F6  &kp F11
-&trans  &trans       &bt BT_PRV  &trans        &trans  &bt BT_SEL 2    &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-                                 &trans        &trans  &kp SPACE       &trans           &trans  &trans
+        &sys_reset        &bt BT_CLR  &out OUT_TOG            &kp LG(LA(UP_ARROW))     &bt BT_SEL 0    &kp INSERT       &kp F7  &kp F8  &kp F9  &kp F12
+        &bootloader       &bt BT_NXT  &kp LG(LA(LEFT_ARROW))  &kp LG(LA(RIGHT_ARROW))  &bt BT_SEL 1    &kp SLCK         &kp F4  &kp F5  &kp F6  &kp F11
+&trans  &region_capture2  &bt BT_PRV  &trans                  &kp LG(LA(DOWN_ARROW))   &bt BT_SEL 2    &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10  &trans
+                                      &trans                  &trans                   &kp SPACE       &trans           &trans  &trans
             >;
         };
 

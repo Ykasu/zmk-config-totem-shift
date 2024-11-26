@@ -92,111 +92,6 @@
             bindings = <&kp ESC>;
         };
 
-        combo_boot {
-            timeout-ms = <50>;
-            key-positions = <20 31>;
-            layers = <1 2 3>;
-            bindings = <&bootloader>;
-        };
-
-        combo_undo {
-            timeout-ms = <50>;
-            key-positions = <34 35>;
-            layers = <0 1 2 3>;
-            bindings = <&kp LC(Z)>;
-        };
-
-        combo_shift1 {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            layers = <0>;
-            bindings = <&kp LSHFT>;
-        };
-
-        combo_shift2 {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            layers = <0>;
-            bindings = <&kp RSHFT>;
-        };
-
-        combo_ctrl1 {
-            timeout-ms = <50>;
-            key-positions = <11 13>;
-            layers = <0>;
-            bindings = <&kp LCTRL>;
-        };
-
-        combo_ctrl2 {
-            timeout-ms = <50>;
-            key-positions = <16 18>;
-            layers = <0>;
-            bindings = <&kp RCTRL>;
-        };
-
-        combo_alt1 {
-            timeout-ms = <50>;
-            key-positions = <13 10>;
-            layers = <0>;
-            bindings = <&kp LALT>;
-        };
-
-        combo_alt2 {
-            timeout-ms = <50>;
-            key-positions = <16 19>;
-            layers = <0>;
-            bindings = <&kp RALT>;
-        };
-
-        combo_super {
-            timeout-ms = <50>;
-            key-positions = <32 37>;
-            layers = <0 2 3 1>;
-            bindings = <&kp LGUI>;
-        };
-
-        combo_backspace1 {
-            key-positions = <5 6>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-            bindings = <&kp BACKSPACE>;
-        };
-
-        to_game_layer {
-            bindings = <&to 4>;
-            key-positions = <4 5>;
-            layers = <0 1 2 3>;
-            timeout-ms = <50>;
-        };
-
-        region_screen {
-            bindings = <&capture_region>;
-            key-positions = <20 25>;
-            layers = <0 1 2 3>;
-            timeout-ms = <50>;
-        };
-
-        combo_backspace2 {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <3 4>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_del1 {
-            bindings = <&kp DEL>;
-            key-positions = <24 25>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_del2 {
-            bindings = <&kp DEL>;
-            key-positions = <26 27>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-        };
-
         /* 			combo_copy {
                 timeout-ms = <50>;
                 key-positions = <5 31 24>;
@@ -207,36 +102,6 @@
                 key-positions = <5 31 12>;
                 bindings = <&bootloader>;
             }; */
-    };
-
-    macros {
-        capture_region: capture_region {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp PRINTSCREEN>,
-                <&macro_release>,
-                <&kp LCTRL>;
-
-            label = "CAPTURE_REGION";
-        };
-
-        region_capture2: region_capture2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RCTRL>,
-                <&macro_tap>,
-                <&kp K_APP>,
-                <&macro_release>,
-                <&kp RCTRL>;
-
-            label = "REGION_CAPTURE2";
-        };
     };
 
     keymap {
@@ -261,9 +126,9 @@
             //                                           └─────────┴─────────┴──────────┘└─────────┴─────────┴─────────┘
 
             bindings = <
-                    &kp DE_Q               &kp DE_W           &kp DE_E           &kp DE_R             &kp DE_T          &kp DE_Y     &kp DE_U              &kp DE_I            &kp DE_O            &kp DE_P
+                    &kp DE_Q               &kp DE_W           &kp DE_E           &kp DE_R             &kp DE_T          &kp DE_Z     &mt DE_U_UMLAUT DE_U  &kp DE_I            &kp DE_O            &kp DE_P
                     &hm LEFT_CONTROL DE_A  &hm LEFT_ALT DE_S  &hm LEFT_GUI DE_D  &hm LEFT_SHIFT DE_F  &kp DE_G          &kp DE_H     &hm RIGHT_SHIFT DE_J  &hm RIGHT_GUI DE_K  &hm RIGHT_ALT DE_L  &hm RIGHT_CONTROL DE_O_UMLAUT
-&mt LEFT_SHIFT TAB  &kp DE_Z               &mt K_CUT DE_X     &mt K_COPY DE_C    &mt K_PASTE DE_V     &kp DE_B          &kp DE_N     &kp DE_M              &kp DE_COMMA        &kp DE_DOT          &kp DE_MINUS                   &kp DE_ESCAPE_CHARACTER
+&mt LEFT_SHIFT TAB  &kp DE_Y               &mt K_CUT DE_X     &mt K_COPY DE_C    &mt K_PASTE DE_V     &kp DE_B          &kp DE_N     &kp DE_M              &kp DE_COMMA        &kp DE_DOT          &kp DE_MINUS                   &kp DE_A_UMLAUT
                                                               &kp DELETE         &kp ENTER            &lt 1 DE_SPACE    &lt 2 ENTER  &kp DE_SPACE          &kp BACKSPACE
             >;
         };

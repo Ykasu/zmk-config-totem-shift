@@ -12,9 +12,7 @@
 
 #include "keys_de.h"
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 
 #define BASE      0
 #define NUM       1
@@ -88,7 +86,7 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
             bindings = <&kp ESC>;
         };
 
@@ -152,16 +150,16 @@
             //                                           └─────────┴─────────┴──────────┘└─────────┴─────────┴─────────┘
 
             bindings = <
-           &kp KP_MINUS  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_DIVIDE      &kp KP_DIVIDE    &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS
-           &kp KP_PLUS   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MULTIPLY    &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS
-&kp PSCRN  &kp KP_DOT    &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp RET            &kp RET          &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT    &trans
-                                    &kp KP_N0  &trans     &kp SPACE          &kp SPACE        &trans     &kp KP_N0
+                &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N4  &kp DE_N5    &kp DE_N6         &kp DE_N7            &kp DE_N8    &kp DE_N9    &kp DE_N0
+                &kp F1     &kp F2     &kp F3     &kp F4     &kp F5       &kp F6            &kp F7               &kp F8       &kp F9       &kp F10
+&kp LEFT_SHIFT  &none      &none      &none      &none      &none        &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &kp DE_PIPE  &kp DE_PLUS  &none      &kp F11
+                                      &kp KP_N0  &kp ENTER  &kp SPACE    &kp DE_HASH       &kp DE_SPACE         &none
             >;
         };
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        media_layer {
+        movement {
             // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 
             label = "MEDIA";
@@ -178,65 +176,15 @@
             //                                           └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘
 
             bindings = <
-                 &kp EXCL  &kp AT     &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS      &kp ASTRK   &kp MINUS     &kp EQUAL
-                 &kp LPAR  &kp LEFT   &kp UP    &kp RIGHT  &kp RPAR     &kp PG_UP  &kp C_PREV    &kp C_PP    &kp C_NEXT    &kp HOME
-&kp PRINTSCREEN  &kp LBKT  &kp GRAVE  &kp DOWN  &kp UNDER  &kp RBKT     &kp PG_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp END    &to 0
-                                      &kp LALT  &kp LCTRL  &kp LSHFT    &trans     &trans        &trans
+       &kp EXCL   &kp DQT                  &kp DE_SECTION  &kp DLLR        &kp PRCNT     &kp DE_AMPERSAND  &kp LS(FSLH)    &kp UP    &kp LS(EQUAL)  &kp LS(QMARK)
+       &kp LCTRL  &hm LEFT_ALT DE_SHARP_S  &kp LEFT_WIN    &kp LEFT_SHIFT  &kp K_UNDO    &none             &kp LEFT_ARROW  &kp DOWN  &kp RIGHT      &kp HOME
+&none  &none      &none                    &none           &none           &none         &none             &none           &none     &none          &kp END        &to 0
+                                           &kp LALT        &kp LCTRL       &kp LSHFT     &trans            &trans          &trans
             >;
         };
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-        function_layer {
-            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-
-            label = "FUNCTION";
-
-            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-            //             ┌─────────┬─────────┬─────────┬─────────┬─────────┐                     ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-            //             │  RESET  │  BT CLR │ OUT TOG │         │ BTSEL 0 │                     │   INS   │    F7   │    F8   │    F9   │   F12   │
-            //             ├─────────┼─────────┼─────────┼─────────┼─────────┤                     ├─────────┼─────────┼─────────┼─────────┼─────────┤
-            //             │  BOOTLD │ BT NEXT │         │         │ BTSEL 1 │                     │  SCRL   │    F4   │    F5   │    F6   │   F11   │
-            //   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-            //   │         │         │ BT PREV │         │         │ BTSEL 2 │                     │  PAUSE  │    F1   │    F2   │    F3   │   F10   │         │
-            //   └─────────┴─────────┴─────────┴─────────┼─────────┼─────────┼──────────┬┬─────────┼─────────┼─────────┼─────────┴─────────┴─────────┴─────────┘
-            //                                           │         │         │  SPACE   ││         │         │         │ 
-            //                                           └─────────┴─────────┴──────────┘└─────────┴─────────┴─────────┘
-
-            bindings = <
-        &sys_reset        &bt BT_CLR  &out OUT_TOG            &kp LG(LA(UP_ARROW))     &bt BT_SEL 0    &kp INSERT       &kp F7  &kp F8  &kp F9  &kp F12
-        &bootloader       &bt BT_NXT  &kp LG(LA(LEFT_ARROW))  &kp LG(LA(RIGHT_ARROW))  &bt BT_SEL 1    &kp SLCK         &kp F4  &kp F5  &kp F6  &kp F11
-&trans  &region_capture2  &bt BT_PRV  &trans                  &kp LG(LA(DOWN_ARROW))   &bt BT_SEL 2    &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-                                      &trans                  &trans                   &kp SPACE       &trans           &trans  &trans
-            >;
-        };
-
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄		
-
-        game_layer {
-            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-
-            label = "GAME";
-
-            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-            //             ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-            //             │    1    │    2    │    3    │    4    │    5    │                    │         │         │         │         │         │   
-            //             ├─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┤
-            //             │  SHIFT  │    A    │    W    │    D    │    F    │                    │         │         │         │         │         │
-            //   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-            //   │ ------- │  CRTL   │ ------- │    S    │    C    │ ------- │                    │         │         │         │         │         │         │
-            //   └─────────┴─────────┴─────────┴─────────┼─────────┼─────────┼─────────┬┬─────────┼─────────┼─────────┼─────────┴─────────┴─────────┴─────────┘
-            //                                           │   ALT   │  SPACE  │  SPACE  ││         │         │         │  
-            //                                           └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘
-
-            bindings = <
-       &kp N1     &kp N2  &kp N3    &kp N4     &kp N5       &trans  &trans  &trans  &trans  &trans
-       &kp LSHFT  &kp A   &kp W     &kp D      &kp F        &trans  &trans  &trans  &trans  &trans
-&none  &kp LCTRL  &none   &kp S     &kp C      &none        &trans  &trans  &trans  &trans  &trans  &to 0
-                          &kp LALT  &kp SPACE  &kp SPACE    &trans  &trans  &trans
-            >;
-        };
-
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄		
     };
 };

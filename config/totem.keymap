@@ -33,10 +33,12 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;			// <---[[produces tap if held longer than tapping-term-ms]]
+            tapping-term-ms = <300>;			// <---[[produces tap if held longer than tapping-term-ms]]
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+
+            quick-tap-ms = <0>;
         };
 
         lc: layer_change {
@@ -126,7 +128,7 @@
             bindings = <
                     &kp DE_Q               &kp DE_W           &kp DE_E           &kp DE_R             &kp DE_T          &kp DE_Z     &mt DE_U_UMLAUT DE_U  &kp DE_I            &kp DE_O            &kp DE_P
                     &hm LEFT_CONTROL DE_A  &hm LEFT_ALT DE_S  &hm LEFT_GUI DE_D  &hm LEFT_SHIFT DE_F  &kp DE_G          &kp DE_H     &hm RIGHT_SHIFT DE_J  &hm RIGHT_GUI DE_K  &hm RIGHT_ALT DE_L  &hm RIGHT_CONTROL DE_O_UMLAUT
-&mt LEFT_SHIFT TAB  &kp DE_Y               &mt K_CUT DE_X     &mt K_COPY DE_C    &mt K_PASTE DE_V     &kp DE_B          &kp DE_N     &kp DE_M              &kp DE_COMMA        &kp DE_DOT          &kp DE_MINUS                   &kp DE_A_UMLAUT
+&mt LEFT_SHIFT TAB  &kp DE_Y               &mt LG(DE_X) DE_X  &mt LG(DE_C) DE_C  &mt LG(DE_V) DE_V    &kp DE_B          &kp DE_N     &kp DE_M              &kp DE_COMMA        &kp DE_DOT          &kp DE_MINUS                   &kp DE_A_UMLAUT
                                                               &kp DELETE         &kp ENTER            &lt 1 DE_SPACE    &lt 2 ENTER  &kp DE_SPACE          &kp BACKSPACE
             >;
         };

@@ -176,10 +176,10 @@
             //                                           └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘
 
             bindings = <
-       &kp EXCL   &kp DQT                  &kp DE_SECTION  &kp DLLR        &kp PRCNT     &kp DE_AMPERSAND  &kp LS(FSLH)    &kp UP    &kp LS(EQUAL)  &kp LS(QMARK)
-       &kp LCTRL  &hm LEFT_ALT DE_SHARP_S  &kp LEFT_WIN    &kp LEFT_SHIFT  &kp K_UNDO    &none             &kp LEFT_ARROW  &kp DOWN  &kp RIGHT      &kp HOME
-&none  &none      &none                    &none           &none           &none         &none             &none           &none     &none          &kp END        &to 0
-                                           &kp LALT        &kp LCTRL       &kp LSHFT     &trans            &trans          &trans
+       &kp DE_EXCL  &kp DE_DOUBLE_QUOTES     &kp DE_SECTION  &kp DE_DOLLAR   &kp DE_PERCENT    &kp DE_AMPERSAND  &kp DE_SLASH         &kp UP       &kp LS(EQUAL)  &kp DE_QUESTION
+       &kp LCTRL    &hm LEFT_ALT DE_SHARP_S  &kp LEFT_WIN    &kp LEFT_SHIFT  &kp K_UNDO        &none             &kp LEFT_ARROW       &kp DOWN     &kp RIGHT      &kp HOME
+&none  &none        &none                    &none           &none           &none             &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &kp DE_PIPE  &kp DE_PLUS    &kp END          &to 0
+                                             &kp LALT        &kp LCTRL       &kp LSHFT         &trans            &trans               &trans
             >;
         };
 

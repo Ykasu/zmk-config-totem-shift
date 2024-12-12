@@ -192,7 +192,7 @@
             bindings = <
                 &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N4  &kp DE_N5    &kp DE_N6         &kp DE_N7            &kp DE_N8    &kp DE_N9    &kp DE_N0
                 &kp F1     &kp F2     &kp F3     &kp F4     &kp F5       &kp F6            &kp F7               &kp F8       &kp F9       &kp F10
-&kp LEFT_SHIFT  &none      &none      &none      &none      &none        &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &kp DE_PIPE  &kp DE_PLUS  &none      &kp F11
+&kp LEFT_SHIFT  &none      &none      &none      &none      &none        &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &kp DE_PIPE  &kp DE_PLUS  &kp DE_MINUS  &kp F11
                                       &kp KP_N0  &kp ENTER  &kp SPACE    &kp DE_HASH       &kp DE_SPACE         &none
             >;
         };
@@ -220,15 +220,6 @@
        &kp LCTRL    &hm LEFT_ALT DE_SHARP_S  &kp LEFT_WIN    &kp LEFT_SHIFT  &kp K_UNDO        &none             &kp LEFT_ARROW       &kp DOWN     &kp RIGHT      &kp HOME
 &none  &none        &none                    &none           &none           &none             &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &kp DE_PIPE  &kp DE_PLUS    &kp END          &to 0
                                              &kp LALT        &kp LCTRL       &kp LSHFT         &trans            &trans               &trans
-            >;
-        };
-
-        layer_3 {
-            bindings = <
-        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
